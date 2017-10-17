@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="backend.xml" />
+ 
+  <rules css:if-content="body.frontend#visual-portal-wrapper">
+    <theme href="index.html" />->
+    <drop css:content='#edit-zone' />
+    <!-- nav -->
+    <!-- <replace css:content='#portal-globalnav' css:theme='nav ul' />
+    <drop css:theme='.nicdark_btn_icon.nicdark_zoom.nicdark_bg_yellow_hover.nicdark_right_sidebar_btn_open' /> -->
+    <!-- nav -->
+    <!-- slide -->
+    <!-- <replace css:content='#cover_image1' css:theme='#img1' />
+    <replace css:content='#cover_image2' css:theme='#img2' />
+    <replace css:content='#cover_image3' css:theme='#img3' />
+    <replace css:content='#cover_image4' css:theme='#img4' />
+    <replace css:content='#cover_image5' css:theme='#img5' /> -->
+
+    <replace css:content=".nicdark_slide1" css:theme=".nicdark_slide1"/>
+    <!-- slide -->
+    <!-- farmer -->
+    <!-- <replace css:content='div div p' css:theme-children='.nicdark_archive1.nicdark_bg_blue .nicdark_margin20 h4' /> -->
+
+    <!-- farmer -->
+    <!-- youtube -->
+    <replace css:content-children='#youtube1' css:theme-children='#youtube1' />
+    <replace css:content-children='#youtube2' css:theme-children='#youtube2' />
+    <replace css:content-children='#youtube3' css:theme-children='#youtube3' />
+    <!-- youtube -->
+    <replace css:content='' css:theme-children='' />
+  </rules>
+</rules>

@@ -1,0 +1,4 @@
+graft src/iaia
+graft docs
+include *.rst
+global-exclude *.pyc
