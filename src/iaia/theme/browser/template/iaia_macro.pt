@@ -1,0 +1,210 @@
+<metal:row define-macro="slider">
+
+    <section class="nicdark_section">
+        <div class="tp-banner-container">     
+            <div class="nicdark_slide1"
+                    tal:define="images python:['cover_image1','cover_image2',
+                            'cover_image3','cover_image4','cover_image5']">
+                <ul>
+                    <li data-transition="fade" data-slotamount="7"
+                        data-masterspeed="1000" data-saveperformance="on"
+                        data-title="${python:getattr(context, image, 'Imaage').filename.split('.')[0]}"
+                        tal:repeat="image images">
+                        <img src="${context/absolute_url}/@@images/${image}"
+                                alt="${python:getattr(context, image, 'Imaage')}"
+                                data-lazyload="${context/absolute_url}/@@images/${image}"
+                                data-bgposition="center bottom"
+                                data-bgfit="cover" data-bgrepeat="no-repeat">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</metal:row>
+
+<metal:row define-macro='nav'>
+
+    <section class="nicdark_section nicdark_margintop45_negative">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            
+            <div class="grid grid_12 percentage nomargin">    
+                <div class="nicdark_textevidence center">
+                    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_blue nicdark_shadow nicdark_radius_left">
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin30">
+                                <h2 class="white subtitle"><a class="white" href="courses.html">COURSES</a></h2>
+                        </div>
+                            <i class="nicdark_zoom icon-pencil-2 nicdark_iconbg left extrabig blue nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+                        </div>
+                    </div>
+                    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_yellow nicdark_shadow">
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin30">
+                                <h2 class="white subtitle"><a class="white" href="prices.html">PRICES</a></h2>
+                        </div>
+                            <i class="nicdark_zoom icon-money-1 nicdark_iconbg left extrabig yellow nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+                        </div>
+                    </div>
+                    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_orange nicdark_shadow">
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin30">
+                                <h2 class="white subtitle"><a class="white" href="events.html">EVENTS</a></h2>
+                        </div>
+                            <i class="nicdark_zoom icon-music-2 nicdark_iconbg left extrabig orange nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+                        </div>
+                    </div>
+                    <div class="nicdark_textevidence nicdark_width_percentage25 nicdark_bg_green nicdark_shadow nicdark_radius_right">
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin30">
+                                <h2 class="white subtitle"><a class="white" href="teachers.html">TEACHERS</a></h2>
+                        </div>
+                            <i class="nicdark_zoom icon-graduation-cap-1 nicdark_iconbg left extrabig green nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+                        </div>
+                    </div>
+                    <div class="nicdark_space5"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+    </section>
+
+</metal:row>
+
+<metal:row define-macro='youtube'>
+    <section class="nicdark_section">
+    <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+        
+            <div class="nicdark_space50"></div>
+            <div class="grid grid_12">
+                <h1 class="subtitle greydark">Youtube</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_green nicdark_radius"></span></div>
+                <div class="nicdark_space10"></div>
+            </div>
+            <div class="grid grid_6 youtube"
+                tal:define="mediaList python:view.get_media()"
+                tal:repeat="media mediaList"
+                tal:content="structure media/youtube">
+            </div>
+
+            <div class="nicdark_space50"></div>
+        </div>
+   <!--end nicdark_container-->
+    </section>
+</metal:row>
+
+<metal:row define-macro='news'>
+    <section class="nicdark_section">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+
+            <div class="nicdark_space50"></div>
+
+
+            <div class="grid grid_12">
+                <h1 class="subtitle greydark">最新消息</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_orange nicdark_radius"></span></div>
+                <div class="nicdark_space10"></div>
+            </div>
+
+
+
+            <div tal:define="news_item_list python:view.get_news_item()"
+            tal:repeat="news_item news_item_list" 
+            class="grid grid_6 news">
+
+            <ul class="nicdark_list border">   
+                <li class="nicdark_border_grey"
+                    tal:repeat="item news_item/brains1">
+                    <p tal:content="item/Title"></p> 
+                    <p tal:content="item/Description"></p>
+                    <a href="#" class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right">Rread More</a>
+                    <div class="nicdark_space15"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div tal:define="news_item_list python:view.get_news_item()"
+            tal:repeat="news_item news_item_list" 
+            class="grid grid_6 news">
+            <ul class="nicdark_list border">
+                <li class="nicdark_border_grey"
+                        tal:repeat="item2 news_item/brains2">
+                        <p tal:content="item2/Title"></p>
+                        <p tal:content="item2/Description"></p> 
+                        <a href="#" class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right">8:00 AM</a>
+                        <div class="nicdark_space15"></div>
+                </li>
+            </ul>
+        </div>
+            <div class="nicdark_space50"></div>
+        </div>
+        <!--end nicdark_container-->
+    </section>
+</metal:row>
+
+<metal:row define-macro='farmer'>
+
+    <section class="nicdark_section">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="nicdark_space50"></div>
+
+            <div class="grid grid_12">
+                <h1 class="subtitle greydark">農民介紹</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_blue nicdark_radius"></span></div>
+                <div class="nicdark_space10"></div>
+            </div>
+
+        <div class="nicdark_masonry_container">
+            <div class="grid grid_4 nicdark_masonry_item educational"
+                tal:define="documentList python:view.get_document()"
+                tal:repeat="documents documentList">
+                <?python
+                    import random
+                    
+                    color=['blue','violet','green'
+                        ,'orange','red','yellow']
+                    choice_color=random.choice(color)
+                    icon=['camera','picture']
+                    choice_icon=random.choice(icon)
+                ?>
+                <div class="nicdark_archive1 nicdark_bg_${choice_color} nicdark_radius nicdark_shadow"
+                    tal:define="item  python:documents.getObject()">
+                                
+                    <a tal:condition="nocall:item/image" href="single-post-right-sidebar.html" 
+                    class="nicdark_zoom nicdark_btn_icon nicdark_bg_${choice_color} 
+                    nicdark_border_${choice_color}dark white medium nicdark_radius_circle nicdark_absolute_left">
+                    <i class="icon-link-outline"></i></a>
+
+                    <img 
+                        tal:condition="nocall:item/image"
+                        tal:attributes="src string:${documents/getURL}/@@images/image">
+                    
+                    <div class="nicdark_margin20">
+                        <h4 class="white" tal:content="documents/Title"></h4>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space20"></div>
+                        <p class="white" tal:content="documents/Description"></p>
+                        <div class="nicdark_space20"></div>
+                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>                        
+                    </div>
+
+                    <i class="icon-${choice_icon}-outline nicdark_iconbg right medium ${choice_color}"></i>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</metal:row>

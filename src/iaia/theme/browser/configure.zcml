@@ -17,5 +17,12 @@
       type="plone"
       directory="static"
       />
-
+  <browser:page
+      name="iaia_macro"
+      for="*"
+      class=".views.IaiaMacro"
+      template="template/iaia_macro.pt"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+  />
 </configure>

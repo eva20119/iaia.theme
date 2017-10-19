@@ -17,15 +17,21 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-
+      <?python
+          import random
+          
+          color=['blue','green'
+              ,'orange','red','yellow']
+      ?>
       <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
-        <ul class="plone-nav plone-navbar-nav"
+        <ul class="nicdark_menu nicdark_margin010 nicdark_padding50"
             id="portal-globalnav"
             tal:define="selected_tab python:view.selected_portal_tab">
             <tal:tabs tal:repeat="tab portal_tabs">
+            <?python choice_color=random.choice(color)?>
               <li tal:define="tid tab/id"
-                  tal:attributes="id string:portaltab-${tid};
-                                  class python:selected_tab==tid and 'selected' or nothing">
+                  tal:attributes="id string:portaltab-${tid};"
+                  class="${choice_color}">
                   <a href=""
                      tal:content="tab/name"
                      tal:attributes="href tab/url;
@@ -36,6 +42,7 @@
               </li>
             </tal:tabs>
         </ul>
+        
       </div>
     </div>
   </nav>
