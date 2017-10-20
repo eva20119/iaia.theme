@@ -95,6 +95,26 @@
         </div>
    <!--end nicdark_container-->
     </section>
+
+    <section class="nicdark_section">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="nicdark_space30"></div>
+
+            <div class="grid grid_12">
+                <div class="nicdark_textevidence center">
+                    <a href="http://localhost:8080/Plone/media_platform" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                </div>
+            </div>
+
+            <div class="nicdark_space40"></div>
+
+        </div>
+        <!--end nicdark_container-->
+                
+    </section>
 </metal:row>
 
 <metal:row define-macro='news'>
@@ -102,9 +122,7 @@
         <!--start nicdark_container-->
         <div class="nicdark_container nicdark_clearfix">
 
-
             <div class="nicdark_space50"></div>
-
 
             <div class="grid grid_12">
                 <h1 class="subtitle greydark">最新消息</h1>
@@ -113,18 +131,21 @@
                 <div class="nicdark_space10"></div>
             </div>
 
-
-
             <div tal:define="news_item_list python:view.get_news_item()"
             tal:repeat="news_item news_item_list" 
             class="grid grid_6 news">
 
             <ul class="nicdark_list border">   
-                <li class="nicdark_border_grey"
+                <li class="nicdark_border_grey custom_news_li"
                     tal:repeat="item news_item/brains1">
-                    <p tal:content="item/Title"></p> 
-                    <p tal:content="item/Description"></p>
-                    <a href="#" class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right">Rread More</a>
+                    <a tal:attributes="href string:${item/getURL}">
+                        <p tal:content="item/Title"
+                           class="custom_news_title"></p>
+                    </a> 
+                    <p  class="custom_news_description"
+                        tal:content="item/Description"></p>
+                    <a tal:attributes="href string:${item/getURL}"
+                       class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right custom_news_btn">Rread More</a>
                     <div class="nicdark_space15"></div>
                 </li>
             </ul>
@@ -134,11 +155,17 @@
             tal:repeat="news_item news_item_list" 
             class="grid grid_6 news">
             <ul class="nicdark_list border">
-                <li class="nicdark_border_grey"
+                <li class="nicdark_border_grey custom_news_li"
                         tal:repeat="item2 news_item/brains2">
-                        <p tal:content="item2/Title"></p>
-                        <p tal:content="item2/Description"></p> 
-                        <a href="#" class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right">8:00 AM</a>
+
+                        <a tal:attributes="href string:${item2/getURL}">
+                            <p tal:content="item2/Title"
+                               class="custom_news_title"></p>
+                        </a> 
+                        <p  class="custom_news_description"
+                            tal:content="item2/Description"></p> 
+                        <a tal:attributes="href string:${item2/getURL}"
+                           class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right custom_news_btn">Rread More</a>
                         <div class="nicdark_space15"></div>
                 </li>
             </ul>
@@ -147,6 +174,27 @@
         </div>
         <!--end nicdark_container-->
     </section>
+
+    <section class="nicdark_section">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="nicdark_space30"></div>
+
+            <div class="grid grid_12">
+                <div class="nicdark_textevidence center">
+                    <a href="http://localhost:8080/Plone/news" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                </div>
+            </div>
+
+            <div class="nicdark_space40"></div>
+
+        </div>
+        <!--end nicdark_container-->
+                
+    </section>
+
 </metal:row>
 
 <metal:row define-macro='farmer'>
@@ -159,7 +207,9 @@
             <div class="nicdark_space50"></div>
 
             <div class="grid grid_12">
-                <h1 class="subtitle greydark">農民介紹</h1>
+                <a href="">
+                    <h1 class="subtitle greydark">農民介紹</h1>
+                </a>
                 <div class="nicdark_space20"></div>
                 <div class="nicdark_divider left big"><span class="nicdark_bg_blue nicdark_radius"></span></div>
                 <div class="nicdark_space10"></div>
@@ -181,9 +231,10 @@
                 <div class="nicdark_archive1 nicdark_bg_${choice_color} nicdark_radius nicdark_shadow"
                     tal:define="item  python:documents.getObject()">
                                 
-                    <a tal:condition="nocall:item/image" href="single-post-right-sidebar.html" 
-                    class="nicdark_zoom nicdark_btn_icon nicdark_bg_${choice_color} 
-                    nicdark_border_${choice_color}dark white medium nicdark_radius_circle nicdark_absolute_left">
+                    <a tal:condition="nocall:item/image" 
+                       tal:attributes="href string:${documents/getURL}"
+                       class="nicdark_zoom nicdark_btn_icon nicdark_bg_${choice_color} 
+                       nicdark_border_${choice_color}dark white medium nicdark_radius_circle nicdark_absolute_left">
                     <i class="icon-link-outline"></i></a>
 
                     <img 
@@ -191,13 +242,21 @@
                         tal:attributes="src string:${documents/getURL}/@@images/image">
                     
                     <div class="nicdark_margin20">
-                        <h4 class="white" tal:content="documents/Title"></h4>
+
+                        <a tal:attributes="href string:${documents/getURL}"
+                           class="custom_farmer_readmore">
+                            <h4 class="white custom_farmer_title" tal:content="documents/Title"></h4>
+                        </a>
                         <div class="nicdark_space20"></div>
-                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_divider left small">
+                            <span class="nicdark_bg_white nicdark_radius"></span>
+                        </div>
                         <div class="nicdark_space20"></div>
                         <p class="white" tal:content="documents/Description"></p>
                         <div class="nicdark_space20"></div>
-                        <a href="single-post-right-sidebar.html" class="white nicdark_btn"><i class="icon-doc-text-1 "></i> Read More</a>                        
+                        <a tal:attributes="href string:${documents/getURL}" 
+                           class="white nicdark_btn custom_farmer_readmore">
+                           <i class="icon-doc-text-1 "></i> Read More</a>                        
                     </div>
 
                     <i class="icon-${choice_icon}-outline nicdark_iconbg right medium ${choice_color}"></i>
@@ -206,5 +265,49 @@
             </div>
         </div>
     </section>
+
+    <section class="nicdark_section">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="nicdark_space30"></div>
+
+            <div class="grid grid_12">
+                <div class="nicdark_textevidence center">
+                    <a href="http://localhost:8080/Plone/economy/market" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                </div>
+            </div>
+
+            <div class="nicdark_space40"></div>
+
+        </div>
+        <!--end nicdark_container-->
+                
+    </section>
     
+</metal:row>
+
+<metal:row define-macro='view_more'>
+
+    <section class="nicdark_section">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="nicdark_space30"></div>
+
+            <div class="grid grid_12">
+                <div class="nicdark_textevidence center">
+                    <a href="blog-masonry.html" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                </div>
+            </div>
+
+            <div class="nicdark_space40"></div>
+
+        </div>
+        <!--end nicdark_container-->
+                
+    </section>
+
 </metal:row>

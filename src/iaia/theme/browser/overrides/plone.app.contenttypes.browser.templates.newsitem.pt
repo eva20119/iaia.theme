@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+  
+  <img  tal:condition="nocall:context/image"
+        src="${context/absolute_url}/@@images/image">
+        
+  <h1 tal:content="context/title"
+      class="custom_newsitem_title"></h1>
+
+  <p tal:content="context/description"
+     class="custom_newsitem_description"></p>
+
+  <div tal:condition="nocall:context/text"
+       class="custom_newsitem_text"
+       tal:content="structure context/text/output"></div>
+  
+      
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

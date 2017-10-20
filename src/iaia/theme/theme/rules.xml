@@ -35,7 +35,24 @@
       </rules>
 
       <replace css:content='#portal-column-content' css:theme-children='.grid.grid_8' />
+      
+      <rules css:if-content='.template-newsitem_view'>
+        <drop css:content='.documentFirstHeading' />
+        <drop css:content='.documentDescription.description' />
+        <drop css:content='#viewlet-above-content-title' />
+      </rules>
 
+      <rules css:if-content='.template-media'>
+        
+        <drop css:content='.documentFirstHeading' />
+        <drop css:content='.documentDescription.description' />
+        <drop css:content='#viewlet-above-content-title' />
+      </rules>
+      <rules css:if-content='.template-document_view'>
+        <drop css:content='.documentFirstHeading' />
+        <drop css:content='.documentDescription.description' />
+        <drop css:content='#viewlet-above-content-title' />
+      </rules>
     </rules>
 
   </rules>
