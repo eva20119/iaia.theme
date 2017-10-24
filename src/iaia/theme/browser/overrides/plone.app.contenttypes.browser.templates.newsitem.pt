@@ -28,7 +28,6 @@
        class="custom_newsitem_text"
        tal:content="structure context/text/output"></div>
   
-      
 </metal:content-core>
 </metal:content-core>
 

@@ -189,11 +189,13 @@ select.big { font-size: 17px; padding: 15px 10%; }
 .nicdark_facebook { background-color:#5977b8; box-shadow:0px 4px 0px 0px #4c67a1;  }
 /*END CUSTOM CLASS TO AVOID INLINE CSS*/
 
-/* costume */
+/* portlet */
 .custom_password{
 	width: 90%;
 	padding: 10px 5%;
 	border: none;
+	background-color: #f1f1f1;
+	box-shadow: 0 4px 0 0 #e5e5e5;
 }
 .custom_text_white{
 	font-size: 19px;
@@ -216,15 +218,29 @@ select.big { font-size: 17px; padding: 15px 10%; }
 	margin-left: 10px;
 }
 .custom_li_margin{
-	margin: 20px 0px 20px 25px;
+	margin: 10px 0px 10px 15px;
 	width: 87% !important;
 }
 .custom_portlet_section{
 	padding-bottom: 15px;
+	margin-bottom: 15px;
 }
-.custom_portlet_title{
+.custom_portlet_header{
 	font-size: 22px;
 }
+.custom_portlet_news_img{
+	float: left;
+}
+.custom_porlet_time{
+	display: block;
+	margin-top: 10px;
+}
+.custom_portlet_news_title{
+	color: black;
+	font-size: 17px;
+}
+
+/* porlet */
 /* cover news */
 .custom_news_title{
 	font-size: 25px;
@@ -287,25 +303,56 @@ select.big { font-size: 17px; padding: 15px 10%; }
 .custom_listing_block:first-child{
 	margin-top: 15px;
 }
-.custom_listing_block{
+.custom_listing_news_block{
 	margin-top: 15px;
+	height: 210px;
 }
-.custom_listing_title a{
+.custom_listing_not_news_block{
+	margin-top: 15px;
+	min-height: 100px;
+}
+.custom_listing_header a{
 	font-size: 25px;
 	color: white;
 }
-.custom_listing_bg{
-	border-radius: 8px;
-	background-color: #98D083;
-	box-shadow: 0px 4px 0px 0px #98D083;
+.custom_listing_news_title{
+	border-radius: 0 4px 0 0 ; 
 	padding: 5px 10px;
+	width: 60%;
+}
+.custom_listing_not_news_title{
+	border-radius: 0 4px 0 0 ; 
+	padding: 5px 10px;
+	width: 100%;
 }
 .custom_listing_description{
 	letter-spacing: 2px;
+	color: white;
+	display: flex;
+	padding-left: 12px;
 }
 .custom_listing_info{
-	margin: 5px 0;
+	margin: 8px 0;
+	display: inline-block;
+	padding-right: 96px;
+	padding-left: 12px;
 }
+.custom_listing_img{
+	float: left;
+	width: 35%;
+	height: 210px;
+	border-radius: 4px 0 0 4px;
+}
+.custom_listing_author{
+	color: antiquewhite;
+}
+.custom_listing_news_line{
+	width: 50px;
+	height: 2px;
+	float: left;
+	margin: 5px 0 5px 12px;
+}
+
 /* listing */
 
 /* youtube */

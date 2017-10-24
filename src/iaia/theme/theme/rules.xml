@@ -24,6 +24,10 @@
       <after css:content-children='#content-core' css:theme='.nicdark_section.nicdark_navigation.fade-down' />
     </rules>
 
+    <!-- 判斷是不是最新消息的目錄 -->
+    
+    <!-- 判斷是不是最新消息的目錄 -->
+
     <rules css:if-not-content="body.frontend#visual-portal-wrapper.portaltype-cover">
       <theme href='faq.html' />
       <drop css:content='#edit-zone' />
@@ -43,17 +47,18 @@
       </rules>
 
       <rules css:if-content='.template-media'>
-        
         <drop css:content='.documentFirstHeading' />
         <drop css:content='.documentDescription.description' />
         <drop css:content='#viewlet-above-content-title' />
       </rules>
+
       <rules css:if-content='.template-document_view'>
         <drop css:content='.documentFirstHeading' />
         <drop css:content='.documentDescription.description' />
         <drop css:content='#viewlet-above-content-title' />
       </rules>
-    </rules>
+
+   </rules>
 
   </rules>
 

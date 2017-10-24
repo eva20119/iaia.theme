@@ -91,10 +91,10 @@ JQUERY UI
 .nicdark_bg_blue{ background-color: #74cee4; }
 .nicdark_bg_violet{ background-color: #c389ce; }
 .nicdark_bg_orange{ background-color: #ec774b; }
-.nicdark_bg_red{ background-color: #e16c6c; }
+.nicdark_bg_red{ background-color: #EA5455; }
 .nicdark_bg_yellow{ background-color: #edbf47; }
 .nicdark_bg_greendark{ background-color: #6ab78a; }
-.nicdark_bg_bluedark{ background-color: #6fc4d9; }
+.nicdark_bg_bluedark{ background-color: #2980B9; }
 .nicdark_bg_violetdark{ background-color: #ac7ab5; }
 .nicdark_bg_orangedark{ background-color: #df764e; }
 .nicdark_bg_reddark{ background-color: #c86969; }
@@ -144,10 +144,10 @@ JQUERY UI
 .nicdark_shadow.nicdark_bg_blue{ box-shadow: 0px 4px 0px 0px #6fc4d9; }
 .nicdark_shadow.nicdark_bg_violet{ box-shadow: 0px 4px 0px 0px #ac7ab5; }
 .nicdark_shadow.nicdark_bg_orange{ box-shadow: 0px 4px 0px 0px #df764e; }
-.nicdark_shadow.nicdark_bg_red{ box-shadow: 0px 4px 0px 0px #c86969; }
+.nicdark_shadow.nicdark_bg_red{ box-shadow: 0px 4px 0px 0px #EA5455; }
 .nicdark_shadow.nicdark_bg_yellow{ box-shadow: 0px 4px 0px 0px #e0b84e; }
 .nicdark_shadow.nicdark_bg_greendark{ box-shadow: 0px 4px 0px 0px #65ae83; }
-.nicdark_shadow.nicdark_bg_bluedark{ box-shadow: 0px 4px 0px 0px #6dc0d5; }
+.nicdark_shadow.nicdark_bg_bluedark{ box-shadow: 0px 4px 0px 0px #2980B9; }
 .nicdark_shadow.nicdark_bg_violetdark{ box-shadow: 0px 4px 0px 0px #a675af; }
 .nicdark_shadow.nicdark_bg_orangedark{ box-shadow: 0px 4px 0px 0px #d8734c; }
 .nicdark_shadow.nicdark_bg_reddark{ box-shadow: 0px 4px 0px 0px #bf6363; }

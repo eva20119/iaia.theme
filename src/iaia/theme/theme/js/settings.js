@@ -22,7 +22,7 @@
 		});
 
 		$( '.nicdark_simulate_click' ).trigger( "click" );
-	
+		
 	});
 	///////////
 

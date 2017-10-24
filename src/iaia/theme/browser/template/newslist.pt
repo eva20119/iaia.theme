@@ -8,12 +8,13 @@
 <body>
 
 <metal:content-core fill-slot="content-core">
-<metal:block define-macro="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
 
   <div metal:define-macro="text-field-view"
       id="parent-fieldname-text" class="stx"
       tal:define="text view/text"
-      tal:condition="text"
+      tal:condition="text" 
       tal:attributes="class view/text_class">
     <div metal:define-slot="inside" tal:replace="structure text">The body</div>
   </div>
@@ -46,7 +47,7 @@
                         ,'orange','red','yellow']
                     choice_color=random.choice(color)
                 ?>
-                <article class="entry custom_listing_not_news_block  nicdark_bg_${choice_color} nicdark_radius ">
+                <article class="entry custom_listing_news_block  nicdark_bg_${choice_color} nicdark_radius ">
                   <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
                     <a tal:attributes="href item_link">
                       <img class="image-mini custom_listing_img"
@@ -56,13 +57,13 @@
                     <span class="summary custom_listing_header" tal:attributes="title item_type">
                       <a tal:attributes="href item_link;
                                          title item_type"
-                          class="custom_listing_not_news_title nicdark_textevidence"
+                          class="custom_listing_news_title nicdark_textevidence"
                           tal:content="item_title">
 
                              Item Title
                       </a>
                      </span>
-                    
+                    <span class="nicdark_bg_white nicdark_radius custom_listing_news_line"></span>
                     <metal:block metal:define-macro="document_byline">
                       <div class="documentByLine custom_listing_info">
                         <tal:event condition="item_is_event">
@@ -107,7 +108,7 @@
                         </tal:byline>
                       </div>
                     </metal:block>
-                    <p class="description discreet custom_listing_description"
+                    <p class="description discreet custom_listing_description 123"
                       tal:condition="item_description"
                       tal:content="item_description">
                     description
@@ -135,9 +136,11 @@
       </metal:empty>
 
     </tal:results>
-  </metal:listingmacro>
+  </metal:listingmacro> 
 
-</metal:block>
+
+
+</metal:content-core>
 </metal:content-core>
 
 </body>
