@@ -62,7 +62,7 @@
                              Item Title
                       </a>
                      </span>
-                    
+                    <span class="nicdark_bg_white nicdark_radius custom_listing_news_line"></span>
                     <metal:block metal:define-macro="document_byline">
                       <div class="documentByLine custom_listing_info">
                         <tal:event condition="item_is_event">

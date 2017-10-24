@@ -130,7 +130,7 @@
                 <div class="nicdark_divider left big"><span class="nicdark_bg_orange nicdark_radius"></span></div>
                 <div class="nicdark_space10"></div>
             </div>
-
+            
             <div tal:define="news_item_list python:view.get_news_item()"
             tal:repeat="news_item news_item_list" 
             class="grid grid_6 news">
@@ -142,10 +142,22 @@
                         <p tal:content="item/Title"
                            class="custom_news_title"></p>
                     </a> 
+                    
+                     <span class="nicdark_radius custom_news_line"></span>
+                    
+                    <br/>  
+            
                     <p  class="custom_news_description"
                         tal:content="item/Description"></p>
-                    <a tal:attributes="href string:${item/getURL}"
-                       class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right custom_news_btn">Rread More</a>
+                    
+                    <div>
+                        <time tal:define="time item/ModificationDate"
+                            tal:content="python:view.toLocalizedTime(time)"
+                            class="custom_news_time"></time>
+                    
+                        <a tal:attributes="href string:${item/getURL}"
+                        class="nicdark_radius nicdark_press custom_news_btn">Rread More</a>
+                    </div>
                     <div class="nicdark_space15"></div>
                 </li>
             </ul>
@@ -161,11 +173,20 @@
                         <a tal:attributes="href string:${item2/getURL}">
                             <p tal:content="item2/Title"
                                class="custom_news_title"></p>
-                        </a> 
+                        </a>
+                        
+                        <span class="nicdark_radius custom_news_line"></span>
+                        <br/>
+
                         <p  class="custom_news_description"
                             tal:content="item2/Description"></p> 
+                        <div>
+                        <time tal:define="time item2/ModificationDate"
+                          tal:content="python:view.toLocalizedTime(time)"
+                          class="custom_news_time"></time>
+
                         <a tal:attributes="href string:${item2/getURL}"
-                           class="nicdark_btn nicdark_bg_blue extrasmall nicdark_radius nicdark_shadow white right custom_news_btn">Rread More</a>
+                           class="nicdark_radius nicdark_press custom_news_btn">Rread More</a>
                         <div class="nicdark_space15"></div>
                 </li>
             </ul>

@@ -5,5 +5,3 @@ from plone import api
 
 class IaiaMacro(BrowserView):
     """ """
-
-

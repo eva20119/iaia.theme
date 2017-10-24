@@ -218,7 +218,7 @@ select.big { font-size: 17px; padding: 15px 10%; }
 	margin-left: 10px;
 }
 .custom_li_margin{
-	margin: 10px 0px 10px 15px;
+	margin: 15px 0px 0px 15px;
 	width: 87% !important;
 }
 .custom_portlet_section{
@@ -230,6 +230,7 @@ select.big { font-size: 17px; padding: 15px 10%; }
 }
 .custom_portlet_news_img{
 	float: left;
+	margin-right: 15px;
 }
 .custom_porlet_time{
 	display: block;
@@ -244,22 +245,44 @@ select.big { font-size: 17px; padding: 15px 10%; }
 /* cover news */
 .custom_news_title{
 	font-size: 25px;
-	color: #86BDE2;
+	color: #3F72AF;
 	line-height: 1.2;
-	margin-top: 10px;
+	margin: 10px 0;
 }
 .custom_news_description{
 	margin-top: 10px;
 	letter-spacing: 1px;
+	font-size: 17px;
+	color:#143A52;
+	margin-bottom: 10px;
 }
 .custom_news_li{
-	height: 170px;
+	color:black;
+	min-height: 210px;
 	position: relative;
+	height: 100%;
 }
 .custom_news_btn{
 	position: absolute;
-	bottom: 15px;
+	bottom: 9px;
 	right: 5px;
+	box-shadow: 0 4px 0 0 #3F72AF;
+	float: right;
+	background-color: #3F72AF;
+	color:white;
+	padding: 5px 10px;
+}
+.custom_news_line{
+	width: 50px;
+	height: 2px;
+	float: left;
+	margin: 5px 0 5px 5px;
+	background-color: black;
+}
+.custom_news_time{
+	position: absolute;
+	bottom: 8px;
+	right: 125px;
 }
 /* cover news */
 .custom_farmer_title{
@@ -275,8 +298,8 @@ select.big { font-size: 17px; padding: 15px 10%; }
 	line-height: 1.2;
 	color:white;
 	border-radius: 8px;
-	background-color: #5F72B2;
-	box-shadow: 0px 4px 0px 0px #5F72B2;
+	background-color: #3F72AF;
+	box-shadow: 0px 4px 0px 0px #3F72AF;
 	padding: 5px 10px;
 }
 .custom_newsitem_description{
@@ -287,8 +310,8 @@ select.big { font-size: 17px; padding: 15px 10%; }
 .custom_newsitem_text p::first-letter{
 	color:whitesmoke;
 	border-radius: 8px;
-	background-color: #5F72B2;
-	box-shadow: 0px 4px 0px 0px #5F72B2;
+	background-color: #3F72AF;
+	box-shadow: 0px 4px 0px 0px #3F72AF;
 	font-size: 50px;
 }
 .custom_newsitem_text p{
@@ -305,7 +328,8 @@ select.big { font-size: 17px; padding: 15px 10%; }
 }
 .custom_listing_news_block{
 	margin-top: 15px;
-	height: 210px;
+	min-height: 210px;
+	height: 100%;
 }
 .custom_listing_not_news_block{
 	margin-top: 15px;

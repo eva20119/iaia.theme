@@ -25,12 +25,5 @@
       layer="zope.interface.Interface"
       permission="zope2.View"
   />
-  <browser:page
-      name="newslist"
-      for="*"
-      class=".folder.FolderView"
-      template="template/newslist.pt"   
-      layer="zope.interface.Interface"
-      permission="zope2.View"
-  />
+ 
 </configure>
