@@ -12,7 +12,8 @@
                     tal:define="toc context/table_of_contents|nothing;">
   
   <img  tal:condition="nocall:context/image"
-        src="${context/absolute_url}/@@images/image">
+        src="${context/absolute_url}/@@images/image"
+        style="max-width:100%">
         
   <h1 tal:content="context/title"
       class="custom_newsitem_title"></h1>

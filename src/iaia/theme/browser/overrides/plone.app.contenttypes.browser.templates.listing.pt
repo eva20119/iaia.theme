@@ -53,7 +53,7 @@
                              tal:condition="item_has_image"
                              tal:attributes="src  string:$item_url/@@images/image/mini">
                     </a>
-                    <span class="summary custom_listing_header" tal:attributes="title item_type">
+                    <span class="summary custom_listing_not_news_header" tal:attributes="title item_type">
                       <a tal:attributes="href item_link;
                                          title item_type"
                           class="custom_listing_not_news_title nicdark_textevidence"
@@ -62,9 +62,9 @@
                              Item Title
                       </a>
                      </span>
-                    <span class="nicdark_bg_white nicdark_radius custom_listing_news_line"></span>
+                    
                     <metal:block metal:define-macro="document_byline">
-                      <div class="documentByLine custom_listing_info">
+                      <div class="documentByLine custom_listing_not_news_info">
                         <tal:event condition="item_is_event">
                           <tal:date tal:replace="structure python:view.formatted_date(obj)"/>
                           <span tal:condition="item/location" i18n:translate="label_event_byline_location">&mdash;
@@ -107,7 +107,7 @@
                         </tal:byline>
                       </div>
                     </metal:block>
-                    <p class="description discreet custom_listing_description"
+                    <p class="description discreet custom_listing_not_news_description"
                       tal:condition="item_description"
                       tal:content="item_description">
                     description

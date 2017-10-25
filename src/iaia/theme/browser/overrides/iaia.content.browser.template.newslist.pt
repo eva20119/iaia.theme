@@ -49,70 +49,76 @@
                 ?>
                 <article class="entry custom_listing_news_block  nicdark_bg_${choice_color} nicdark_radius ">
                   <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
-                    <a tal:attributes="href item_link">
-                      <img class="image-mini custom_listing_img"
-                             tal:condition="item_has_image"
-                             tal:attributes="src  string:$item_url/@@images/image/mini">
-                    </a>
-                    <span class="summary custom_listing_header" tal:attributes="title item_type">
-                      <a tal:attributes="href item_link;
-                                         title item_type"
-                          class="custom_listing_news_title nicdark_textevidence"
-                          tal:content="item_title">
-
-                             Item Title
+                    <div class="block-left">
+                      <a tal:attributes="href item_link"
+                        >
+                        <img class="image-mini custom_listing_img "
+                              tal:condition="item_has_image"
+                              tal:attributes="src  string:$item_url/@@images/image">
                       </a>
-                     </span>
-                    <span class="nicdark_bg_white nicdark_radius custom_listing_news_line"></span>
-                    <metal:block metal:define-macro="document_byline">
-                      <div class="documentByLine custom_listing_info">
-                        <tal:event condition="item_is_event">
-                          <tal:date tal:replace="structure python:view.formatted_date(obj)"/>
-                          <span tal:condition="item/location" i18n:translate="label_event_byline_location">&mdash;
-                            <span tal:content="string:${item/location}" class="location" i18n:name="location">Oslo</span>,
-                          </span>
-                        </tal:event>
-                        <tal:byline condition="view/show_about">
-                          
-                          <tal:name tal:condition="item_creator"
-                              tal:define="author python:view.pas_member.info(item_creator);
-                                          creator_short_form author/username;
-                                          creator_long_form string:?author=${author/username};
-                                          creator_is_openid python:'/' in creator_short_form;
-                                          creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
-                          <span i18n:translate="label_by_author">
-                            by
-                            <a tal:attributes="href string:${view/navigation_root_url}/author/${item_creator}"
-                                tal:content="author/name_or_id"
-                                tal:omit-tag="not:author"
-                                i18n:name="author"
-                                class="custom_listing_author">
-                              Bob Dobalina
-                            </a>
-                          </span>
-                          </tal:name>
+                    </div>
+                    <div class="block-right">
+                      <span class="summary custom_listing_header " tal:attributes="title item_type">
+                        <a tal:attributes="href item_link;
+                                          title item_type"
+                            class="custom_listing_news_title nicdark_textevidence"
+                            tal:content="item_title">
 
-                          <tal:modified condition="python: item_type != 'Event'">
-                            &mdash;
-                            <tal:mod i18n:translate="box_last_modified">last modified</tal:mod>
-                            <span tal:replace="python:view.toLocalizedTime(item_modified,long_format=1)">
-                              August 16, 2001 at 23:35:59
+                              Item Title
+                        </a>
+                        
+                      </span>
+                      <span class="nicdark_bg_white nicdark_radius custom_listing_news_line"></span>
+                      <metal:block metal:define-macro="document_byline">
+                        <div class="documentByLine custom_listing_info clearfix">
+                          <tal:event condition="item_is_event">
+                            <tal:date tal:replace="structure python:view.formatted_date(obj)"/>
+                            <span tal:condition="item/location" i18n:translate="label_event_byline_location">&mdash;
+                              <span tal:content="string:${item/location}" class="location" i18n:name="location">Oslo</span>,
                             </span>
-                          </tal:modified>
+                          </tal:event>
+                          <tal:byline condition="view/show_about">
+                            
+                            <tal:name tal:condition="item_creator"
+                                tal:define="author python:view.pas_member.info(item_creator);
+                                            creator_short_form author/username;
+                                            creator_long_form string:?author=${author/username};
+                                            creator_is_openid python:'/' in creator_short_form;
+                                            creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
+                            <span i18n:translate="label_by_author">
+                              by
+                              <a tal:attributes="href string:${view/navigation_root_url}/author/${item_creator}"
+                                  tal:content="author/name_or_id"
+                                  tal:omit-tag="not:author"
+                                  i18n:name="author"
+                                  class="custom_listing_author">
+                                Bob Dobalina
+                              </a>
+                            </span>
+                            </tal:name>
 
-                          <metal:description define-slot="description_slot">
-                            <tal:comment replace="nothing">
-                              Place custom listing info for custom types here
-                            </tal:comment>
-                          </metal:description>
-                        </tal:byline>
-                      </div>
-                    </metal:block>
-                    <p class="description discreet custom_listing_description 123"
-                      tal:condition="item_description"
-                      tal:content="item_description">
-                    description
-                    </p>
+                            <tal:modified condition="python: item_type != 'Event'">
+                              &mdash;
+                              <tal:mod i18n:translate="box_last_modified">last modified</tal:mod>
+                              <span tal:replace="python:view.toLocalizedTime(item_modified,long_format=1)">
+                                August 16, 2001 at 23:35:59
+                              </span>
+                            </tal:modified>
+
+                            <metal:description define-slot="description_slot">
+                              <tal:comment replace="nothing">
+                                Place custom listing info for custom types here
+                              </tal:comment>
+                            </metal:description>
+                          </tal:byline>
+                        </div>
+                      </metal:block>
+                      <p class="description discreet custom_listing_description clearfix"
+                        tal:condition="item_description"
+                        tal:content="item_description">
+                        description
+                      </p>
+                  </div>
                   </header>
                   
                 </article>
