@@ -9,7 +9,9 @@
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
-
+  <div id="banner">
+    <metal:banner use-macro="context/@@iaia_macro/macros/banner" />
+  </div>
   <div metal:define-macro="text-field-view"
       id="parent-fieldname-text" class="stx"
       tal:define="text view/text"

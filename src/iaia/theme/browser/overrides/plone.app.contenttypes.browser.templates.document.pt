@@ -10,9 +10,12 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-
+  <div id="banner">
+    <metal:banner use-macro="context/@@iaia_macro/macros/banner" />
+  </div>
 
   <img  tal:condition="nocall:context/image"
+        class="custom_document_img"
         src="${context/absolute_url}/@@images/image">
   
   <h1 tal:content="context/title"

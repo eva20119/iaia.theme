@@ -10,10 +10,18 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-  
-  <img  tal:condition="nocall:context/image"
-        src="${context/absolute_url}/@@images/image"
-        style="max-width:100%">
+  <div id="banner">
+    <metal:banner use-macro="context/@@iaia_macro/macros/banner" />
+  </div>
+    <?python
+        from plone import api
+        portal = api.portal.get()
+    ?>
+  <img  tal:define="context_url python:context.absolute_url();
+                    portal_url python:portal.absolute_url()"
+        tal:attributes="src string:${python:'%s/@@images/image' % context_url 
+        if context.image else '%s/default/6896036726193.jpg/@@images/image' % portal_url}"
+        class="custom_newsitem_img">
         
   <h1 tal:content="context/title"
       class="custom_newsitem_title"></h1>

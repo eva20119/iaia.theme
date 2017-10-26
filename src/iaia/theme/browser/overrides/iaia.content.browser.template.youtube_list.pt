@@ -13,7 +13,6 @@
   <div id="banner">
     <metal:banner use-macro="context/@@iaia_macro/macros/banner" />
   </div>
-
   <div metal:define-macro="text-field-view"
       id="parent-fieldname-text" class="stx"
       tal:define="text view/text"
@@ -52,25 +51,12 @@
                 ?>
                 <article class="entry custom_listing_news_block  nicdark_bg_${choice_color} nicdark_radius ">
                   <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
-                    <div class="block-left">
-                      <a tal:attributes="href item_link"
-                        >
-                        <?python
-                            from plone import api
-                            portal = api.portal.get()
-                          ?>
-                        <img class="image-mini custom_listing_img "
-                             tal:attributes="src  string:${python:'%s/@@images/image' 
-                             % item.getURL() if item.getIcon else 
-                             '%s/default/6896036726193.jpg/@@images/image' % portal.absolute_url()}">
-                      </a>
-                    </div>
-                    <div class="block-right">
+                    <div class="nicdark_bg_${choice_color} nicdark_radius">
                       <span class="summary custom_listing_header " tal:attributes="title item_type">
                         <a tal:attributes="href item_link;
                                           title item_type"
                             class="custom_listing_news_title nicdark_textevidence"
-                            tal:content="python:item_title[:60]">
+                            tal:content="item_title">
 
                               Item Title
                         </a>
@@ -121,11 +107,13 @@
                           </tal:byline>
                         </div>
                       </metal:block>
-                      <p class="description discreet custom_listing_description clearfix"
+                      <p class="description discreet custom_listing_youtube_description"
                         tal:condition="item_description"
                         tal:content="item_description">
                         description
                       </p>
+                      <div tal:content="structure obj/youtube"
+                           class="custom_listing_youtube"></div>
                   </div>
                   </header>
                   

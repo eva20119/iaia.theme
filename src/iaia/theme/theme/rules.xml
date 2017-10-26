@@ -21,23 +21,29 @@
     <rules css:if-content="body.frontend#visual-portal-wrapper.portaltype-cover">
       <theme href="index.html" />
       <drop css:content='#edit-zone' />
+      <replace css:content='#portal-logo' css:theme-children='.nicdark_logo.nicdark_marginleft10' />
       <after css:content-children='#content-core' css:theme='.nicdark_section.nicdark_navigation.fade-down' />
     </rules>
 
-    <!-- 判斷是不是最新消息的目錄 -->
-    
-    <!-- 判斷是不是最新消息的目錄 -->
-
     <rules css:if-not-content="body.frontend#visual-portal-wrapper.portaltype-cover">
-      <theme href='faq.html' />
-      <drop css:content='#edit-zone' />
-      <replace css:content='#portal-column-two' css:theme='.nicdark_archive1.nicdark_bg_grey.nicdark_radius.nicdark_shadow' />
-
+    
       <rules css:if-content='.portaltype-faq'>
+        <theme href='faq.html' />
+        
+        <replace css:content='#portal-logo' css:theme-children='.nicdark_logo.nicdark_marginleft10' />
         <drop css:content='#content header' />
         <replace css:content='.nicdark_toogle' css:theme='.nicdark_toogle' />
       </rules>
 
+      <theme href='inner.html' />
+      <drop css:content='#edit-zone' />
+      <replace css:content='#portal-logo' css:theme-children='.nicdark_logo.nicdark_marginleft10' />
+      <replace css:content='#portal-column-two' css:theme='.nicdark_archive1.nicdark_bg_grey.nicdark_radius.nicdark_shadow' />
+      
+      
+      <before css:content-children='#banner' css:theme='.nicdark_section.nicdark_navigation.fade-down' />
+      <drop css:content='#banner' />
+      <drop css:content='#viewlet-above-content-title' />
       <replace css:content='#portal-column-content' css:theme-children='.grid.grid_8' />
       
       <rules css:if-content='.template-newsitem_view'>

@@ -131,67 +131,37 @@
                 <div class="nicdark_space10"></div>
             </div>
             
-            <div tal:define="news_item_list python:view.get_news_item()"
-            tal:repeat="news_item news_item_list" 
-            class="grid grid_6 news">
+            <div  class="grid grid_12 cover_news">
 
-            <ul class="nicdark_list border">   
-                <li class="nicdark_border_grey custom_news_li"
-                    tal:repeat="item news_item/brains1">
-                    <a tal:attributes="href string:${item/getURL}">
-                        <p tal:content="item/Title"
-                           class="custom_news_title"></p>
-                    </a> 
-                    
-                     <span class="nicdark_radius custom_news_line"></span>
-                    
-                    <br/>  
-            
-                    <p  class="custom_news_description"
-                        tal:content="item/Description"></p>
-                    
-                    <div>
-                        <time tal:define="time item/ModificationDate"
-                            tal:content="python:view.toLocalizedTime(time)"
-                            class="custom_news_time"></time>
-                    
-                        <a tal:attributes="href string:${item/getURL}"
-                        class="nicdark_radius nicdark_press custom_news_btn">Rread More</a>
-                    </div>
-                    <div class="nicdark_space15"></div>
-                </li>
-            </ul>
-        </div>
-
-        <div tal:define="news_item_list python:view.get_news_item()"
-            tal:repeat="news_item news_item_list" 
-            class="grid grid_6 news">
-            <ul class="nicdark_list border">
-                <li class="nicdark_border_grey custom_news_li"
-                        tal:repeat="item2 news_item/brains2">
-
-                        <a tal:attributes="href string:${item2/getURL}">
-                            <p tal:content="item2/Title"
+                <ul class="custom_news_ul">   
+                    <li class="grid grid_6 custom_news_li"
+                        tal:define="news_item_list python:view.get_news_item()"
+                        tal:repeat="news_item news_item_list">
+                        <a tal:attributes="href string:${news_item/getURL}">
+                            <p tal:define="news_item_title python:view.get_news_item_title(news_item)"
+                               tal:content="news_item_title/title"
                                class="custom_news_title"></p>
-                        </a>
+                        </a> 
                         
                         <span class="nicdark_radius custom_news_line"></span>
-                        <br/>
-
+                        
+                        <br/>  
+                
                         <p  class="custom_news_description"
-                            tal:content="item2/Description"></p> 
+                            tal:content="news_item/Description"></p>
+                        
                         <div>
-                        <time tal:define="time item2/ModificationDate"
-                          tal:content="python:view.toLocalizedTime(time)"
-                          class="custom_news_time"></time>
-
-                        <a tal:attributes="href string:${item2/getURL}"
-                           class="nicdark_radius nicdark_press custom_news_btn">Rread More</a>
+                            <time tal:define="time news_item/ModificationDate"
+                                tal:content="python:view.toLocalizedTime(time)"
+                                class="custom_news_time"></time>
+                        
+                            <a tal:attributes="href string:${news_item/getURL}"
+                            class="nicdark_radius nicdark_press custom_news_btn">Rread More</a>
+                        </div>
                         <div class="nicdark_space15"></div>
-                </li>
-            </ul>
-        </div>
-            <div class="nicdark_space50"></div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!--end nicdark_container-->
     </section>
@@ -250,7 +220,7 @@
                     choice_icon=random.choice(icon)
                 ?>
                 <div class="nicdark_archive1 nicdark_bg_${choice_color} nicdark_radius nicdark_shadow"
-                    tal:define="item  python:documents.getObject()">
+                     tal:define="item  python:documents.getObject()">
                                 
                     <a tal:condition="nocall:item/image" 
                        tal:attributes="href string:${documents/getURL}"
@@ -332,3 +302,47 @@
     </section>
 
 </metal:row>
+
+<metal:row define-macro='banner'>
+
+    <?python
+    from plone import api
+    portal = api.portal.get()
+    ?>
+    <section id="nicdark_parallax_title" class="nicdark_section"
+             tal:define="portal_url python:portal.absolute_url();
+                         context_url python:context.absolute_url();
+                         folder python:context_url.split(portal_url)[1].split('/')[1];
+                         bg_url python:portal_url+'/'+folder"
+             style="background:url(${python:'%s/@@images/image' % bg_url if portal[folder].image 
+             else '%s/default/6896036726193.jpg/@@images/image' % portal.absolute_url()});
+                    background-size:cover"
+            >
+            
+
+            
+        <div class="nicdark_filter greydark">
+
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+
+                <div class="grid grid_12">
+                    <div class="nicdark_space100"></div>
+                    <div class="nicdark_space100"></div>
+                    <h1 class="white subtitle">FAQ</h1>
+                    <div class="nicdark_space10"></div>
+                    <h3 class="subtitle white">FREQUENTLY ASKED QUESTIONS</h3>
+                    <div class="nicdark_space20"></div>
+                    <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                    <div class="nicdark_space40"></div>
+                    <div class="nicdark_space50"></div>
+                </div>
+
+            </div>
+            <!--end nicdark_container-->
+
+        </div>
+        
+    </section>
+</metal:row>
+
