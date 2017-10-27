@@ -105,7 +105,10 @@
 
             <div class="grid grid_12">
                 <div class="nicdark_textevidence center">
-                    <a href="http://localhost:8080/Plone/media_platform" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                    <a href="http://localhost:8080/Plone/media_platform" 
+                    class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow 
+                    nicdark_radius white nicdark_margin10"><i class="icon-th-outline">
+                    </i>&nbsp;&nbsp;&nbsp;更多資訊</a>
                 </div>
             </div>
 
@@ -156,7 +159,7 @@
                                 class="custom_news_time"></time>
                         
                             <a tal:attributes="href string:${news_item/getURL}"
-                            class="nicdark_radius nicdark_press custom_news_btn">Rread More</a>
+                            class="nicdark_radius nicdark_press custom_news_btn">閱讀更多</a>
                         </div>
                         <div class="nicdark_space15"></div>
                     </li>
@@ -175,7 +178,10 @@
 
             <div class="grid grid_12">
                 <div class="nicdark_textevidence center">
-                    <a href="http://localhost:8080/Plone/news" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                    <a href="http://localhost:8080/Plone/news" class="nicdark_zoom 
+                    nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius
+                     white nicdark_margin10"><i class="icon-th-outline">
+                     </i>&nbsp;&nbsp;&nbsp;更多資訊</a>
                 </div>
             </div>
 
@@ -247,7 +253,7 @@
                         <div class="nicdark_space20"></div>
                         <a tal:attributes="href string:${documents/getURL}" 
                            class="white nicdark_btn custom_farmer_readmore">
-                           <i class="icon-doc-text-1 "></i> Read More</a>                        
+                           <i class="icon-doc-text-1 "></i> 瞭解更多</a>                        
                     </div>
 
                     <i class="icon-${choice_icon}-outline nicdark_iconbg right medium ${choice_color}"></i>
@@ -266,7 +272,10 @@
 
             <div class="grid grid_12">
                 <div class="nicdark_textevidence center">
-                    <a href="http://localhost:8080/Plone/economy/market" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10"><i class="icon-th-outline"></i>&nbsp;&nbsp;&nbsp;VIEW MORE</a>
+                    <a href="http://localhost:8080/Plone/economy/market" 
+                    class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow 
+                    nicdark_radius white nicdark_margin10"><i class="icon-th-outline">
+                    </i>&nbsp;&nbsp;&nbsp;更多資訊</a>
                 </div>
             </div>
 

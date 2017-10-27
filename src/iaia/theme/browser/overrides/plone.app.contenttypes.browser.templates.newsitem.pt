@@ -25,9 +25,9 @@
         
   <h1 tal:content="context/title"
       class="custom_newsitem_title"></h1>
-  <label for="">修改日期:
+  <label class='custom_newsitem_time'>修改日期:
   <time tal:content="python:context.modified().strftime('%Y年%m月%d日')"></time></label>
-  <label for="">創建日期:
+  <label class="custom_newsitem_time">創建日期:
   <time tal:content="python:context.created().strftime('%Y年%m月%d日')"></time></label>
 
   <p tal:content="context/description"

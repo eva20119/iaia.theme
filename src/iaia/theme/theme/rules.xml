@@ -29,7 +29,6 @@
     
       <rules css:if-content='.portaltype-faq'>
         <theme href='faq.html' />
-        
         <replace css:content='#portal-logo' css:theme-children='.nicdark_logo.nicdark_marginleft10' />
         <drop css:content='#content header' />
         <replace css:content='.nicdark_toogle' css:theme='.nicdark_toogle' />
@@ -43,6 +42,7 @@
       
       <before css:content-children='#banner' css:theme='.nicdark_section.nicdark_navigation.fade-down' />
       <drop css:content='#banner' />
+
       <drop css:content='#viewlet-above-content-title' />
       <replace css:content='#portal-column-content' css:theme-children='.grid.grid_8' />
       

@@ -48,7 +48,7 @@
                             </span>
                         </a>
 
-                        <time class="portletItemDetails custom_porlet_time"
+                        <time class="portletItemDetails custom_portlet_time"
                               tal:content="python:toLocalizedTime(obj.Date)">May 5</time>
                     </li>
                   </tal:newsitems>
