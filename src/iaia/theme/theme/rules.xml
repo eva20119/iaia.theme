@@ -11,11 +11,16 @@
   <rules css:if-content="body.frontend#visual-portal-wrapper">
 
     <drop css:theme='.nicdark_btn_icon.nicdark_zoom.nicdark_bg_yellow_hover.nicdark_right_sidebar_btn_open' />
-    <drop css:theme='.icon-globe-alt-outline' />
     <drop css:theme='.white.nicdark_mpopup_window' />
-    
+    <rules css:if-content='.template-user_login'>
+      <theme href='index.html' />
+      <replace css:content-children='#content-core' css:theme-children='body' />
+      
+    </rules>
     <!-- nav -->
     <replace css:content-children='#portal-globalnav-collapse' css:theme-children='nav' />
+    <replace css:content='#login_bar' css:theme-children='.nicdark_section.nicdark_bg_greydark.nicdark_displaynone_responsive' />
+    <replace css:content='#portal-footer-wrapper' css:theme-children='#user_footer' />
     <!-- nav -->
 
     <rules css:if-content="body.frontend#visual-portal-wrapper.portaltype-cover">
@@ -26,7 +31,6 @@
     </rules>
 
     <rules css:if-not-content="body.frontend#visual-portal-wrapper.portaltype-cover">
-    
       <rules css:if-content='.portaltype-faq'>
         <theme href='faq.html' />
         <replace css:content='#portal-logo' css:theme-children='.nicdark_logo.nicdark_marginleft10' />
@@ -59,6 +63,12 @@
       </rules>
 
       <rules css:if-content='.template-document_view'>
+        <drop css:content='.documentFirstHeading' />
+        <drop css:content='.documentDescription.description' />
+        <drop css:content='#viewlet-above-content-title' />
+      </rules>
+
+      <rules css:if-content='.template-user_login'>
         <drop css:content='.documentFirstHeading' />
         <drop css:content='.documentDescription.description' />
         <drop css:content='#viewlet-above-content-title' />

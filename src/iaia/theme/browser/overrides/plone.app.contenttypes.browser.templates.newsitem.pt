@@ -20,7 +20,7 @@
   <img  tal:define="context_url python:context.absolute_url();
                     portal_url python:portal.absolute_url()"
         tal:attributes="src string:${python:'%s/@@images/image' % context_url 
-        if context.image else '%s/default/6896036726193.jpg/@@images/image' % portal_url}"
+        if context.image else '%s/default/default_img.jpg/@@images/image' % portal_url}"
         class="custom_newsitem_img">
         
   <h1 tal:content="context/title"

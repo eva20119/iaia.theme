@@ -201,13 +201,13 @@ select.big { font-size: 17px; padding: 15px 10%; }
 	font-size: 19px;
 	color: white;
 }
-.custom_login_name{
+.custom_portlet_login_name{
 	font-size: 19px;
 	color: black;
 	padding-top: 75px;
 	margin-bottom: 5px;
 }
-.custom_login_password{
+.custom_portlet_login_password{
 	font-size: 19px;
 	color: black;
 	margin-top: 60px;
@@ -542,19 +542,23 @@ select.big { font-size: 17px; padding: 15px 10%; }
 	border-radius: 5px;
 }
 /* batchnav */
-/* .clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-} */
-/* .clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-} */
+
+/* login */
+.custom_login_section{
+	padding: 15px;
+}
+.custom_login_title{
+	margin-bottom: 15px;
+}
+.custom_login_block{
+	display: inline-block;
+	width: 100%;
+}
+.custom_login_username{
+	float: left;
+	font-size: 17px;
+}
+.custom_login_btn{
+	margin-top: 15px;
+}
+/* login */

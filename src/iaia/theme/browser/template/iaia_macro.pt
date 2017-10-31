@@ -324,7 +324,7 @@
                          folder python:context_url.split(portal_url)[1].split('/')[1];
                          bg_url python:portal_url+'/'+folder"
              style="background:url(${python:'%s/@@images/image' % bg_url if portal[folder].image 
-             else '%s/default/6896036726193.jpg/@@images/image' % portal.absolute_url()});
+             else '%s/default/default_img.jpg/@@images/image' % portal.absolute_url()});
                     background-size:cover"
             >
             

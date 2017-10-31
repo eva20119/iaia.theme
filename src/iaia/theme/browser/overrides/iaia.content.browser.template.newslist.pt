@@ -59,10 +59,11 @@
                             from plone import api
                             portal = api.portal.get()
                           ?>
+                        
                         <img class="image-mini custom_listing_img "
                              tal:attributes="src  string:${python:'%s/@@images/image' 
                              % item.getURL() if item.getIcon else 
-                             '%s/default/6896036726193.jpg/@@images/image' % portal.absolute_url()}">
+                             '%s/default/default_img.jpg/@@images/image' % portal.absolute_url()}">
                       </a>
                     </div>
                     <div class="block-right">

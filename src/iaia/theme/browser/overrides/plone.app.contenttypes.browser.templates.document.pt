@@ -14,10 +14,17 @@
     <metal:banner use-macro="context/@@iaia_macro/macros/banner" />
   </div>
 
-  <img  tal:condition="nocall:context/image"
-        class="custom_document_img"
-        src="${context/absolute_url}/@@images/image">
-  
+  <?python
+    from plone import api
+    portal = api.portal.get()
+    ?>
+                        
+
+  <img class="custom_document_img "
+        tal:attributes="src  string:${python:'%s/@@images/image' 
+        % context.absolute_url() if context.image else 
+        '%s/default/default_img.jpg/@@images/image' % portal.absolute_url()}">
+
   <h1 tal:content="context/title"
       class="custom_document_title"></h1>
       

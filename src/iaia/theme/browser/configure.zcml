@@ -25,5 +25,12 @@
       layer="zope.interface.Interface"
       permission="zope2.View"
   />
- 
+
+  <browser:page
+      name="send_mail"
+      for="*"
+      class=".views.Send_mail"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+  />
 </configure>

@@ -19,10 +19,33 @@
       </div>
       <?python
           import random
-          
+          from plone import api
+          portal = api.portal.get()
+          abs_url=portal.absolute_url()
           color=['blue','green'
               ,'orange','red','yellow']
       ?>
+    <div class="nicdark_section nicdark_bg_greydark nicdark_displaynone_responsive" id="login_bar">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_6">
+                <div class="nicdark_focus">
+                    <h6 class="white">
+                        <i class="icon-phone-outline"></i>&nbsp;&nbsp;(00) +12321312
+                    </h6>
+                </div>
+            </div>
+            <div class="grid grid_6 right">
+                <div class="nicdark_focus right">
+                    <h6 class="white">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">·</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="icon-lock-1 "></i>&nbsp;&nbsp;
+                        <a class="white nicdark_mpopup_ajax" 
+                        tal:attributes="href string:${python:'%s/++theme++theme/form-login.html' % abs_url}">LOG IN</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+      </div>
       <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
         <ul class="nicdark_menu nicdark_margin010 nicdark_padding50"
             id="portal-globalnav"

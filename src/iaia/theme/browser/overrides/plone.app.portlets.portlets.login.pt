@@ -31,7 +31,7 @@
                 tal:define="use_email_as_login python:context.portal_registry['plone.use_email_as_login'];">
 
             <tal:loginname condition="not:use_email_as_login">
-            <p     class="custom_login_name"
+            <p     class="custom_portlet_login_name"
                     tal:attributes="for ac_name"
                     i18n:translate="label_login_name">Login Name</p>
             
@@ -47,7 +47,7 @@
         </div>
 
         <div >
-            <p     class="custom_login_password"
+            <p     class="custom_portlet_login_password"
                     tal:attributes="for ac_password"
                     i18n:translate="label_password">Password</p>
             <input type="password"
