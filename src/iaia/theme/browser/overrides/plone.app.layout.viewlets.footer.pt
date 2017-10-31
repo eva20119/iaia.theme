@@ -11,7 +11,7 @@
 			<div class="nicdark_space20"></div>
 
 			<div class="nicdark_margin10">
-				<h4 class="white">asdasdadasd</h4>
+				<h4 class="white">asdasdadasdasdasdadasd</h4>
 				<div class="nicdark_space20"></div>
 				<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
 				<div class="nicdark_space20"></div>
@@ -120,11 +120,11 @@
 					tal:attributes="action string:${python:'%s/send_mail' %abs_url}">
 
 					<input class="nicdark_bg_greydark2 nicdark_radius nicdark_shadow 
-					white small subtitle" type="text" value="" placeholder="EMAIL"
+					white small subtitle" type="text" value="" placeholder="請輸入信箱"
 					name="email">
 					<div class="nicdark_space20"></div>
 					<textarea rows="3" class="nicdark_bg_greydark2 nicdark_radius 
-					nicdark_shadow white small subtitle" placeholder="MESSAGE"
+					nicdark_shadow white small subtitle" placeholder="請輸入訊息"
 					name="message"></textarea>
 					<div class="nicdark_space20"></div>
 					<!--<input class="nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white nicdark_press" type="submit" value="SEND">-->
@@ -149,12 +149,17 @@
 
 	<!--start nicdark_container-->
 	<div class="nicdark_container nicdark_clearfix">
-
-		<div class="grid grid_6 nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
+		
+		<div class="grid grid_6 nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr"
+			>
+			<?python
+				from plone import api
+				user_default = 'iaia.content.browser.UserDefault.IUserDefault'
+				footer= api.portal.get_registry_record('%s.footer' % user_default)
+			?>
 			<div class="nicdark_space20"></div>
-			<p class="white">© Copyright 2014 by <span class="grey">NicDark</span>Themes.com - Made With <i class="icon-heart-filled red nicdark_zoom"></i> In Venice</p>
+			<p class="white" tal:content='structure footer'></p>
 		</div>
-
 
 		<div class="grid grid_6">
 			<div class="nicdark_focus right nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">

@@ -25,6 +25,7 @@
 
     <rules css:if-content="body.frontend#visual-portal-wrapper.portaltype-cover">
       <theme href="index.html" />
+      <drop css:content='#viewlet-below-content' />
       <drop css:content='#edit-zone' />
       <replace css:content='#portal-logo' css:theme-children='.nicdark_logo.nicdark_marginleft10' />
       <after css:content-children='#content-core' css:theme='.nicdark_section.nicdark_navigation.fade-down' />

@@ -561,4 +561,15 @@ select.big { font-size: 17px; padding: 15px 10%; }
 .custom_login_btn{
 	margin-top: 15px;
 }
+.custom_login_text{
+	float: right;
+	font-size: 17px;
+	color: white;
+}
+.custom_login_icon{
+	font-size: 18px;
+	float: right;
+	margin: 0 5px 0 10px;
+	color:white;
+}
 /* login */

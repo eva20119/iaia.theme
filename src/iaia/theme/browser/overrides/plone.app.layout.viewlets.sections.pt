@@ -30,18 +30,50 @@
             <div class="grid grid_6">
                 <div class="nicdark_focus">
                     <h6 class="white">
-                        <i class="icon-phone-outline"></i>&nbsp;&nbsp;(00) +12321312
+                        <?python
+                            from plone import api
+                            user_default = 'iaia.content.browser.UserDefault.IUserDefault'
+                            phone= api.portal.get_registry_record('%s.phone' % user_default)
+                        ?>
+                        <i class="icon-phone-outline"
+                           tal:content="phone"></i>
                     </h6>
                 </div>
             </div>
+            <?python
+                from plone import api
+                portal=api.portal.get()
+                abs_url=portal.absolute_url()
+                annoymous= api.user.is_anonymous()
+                current = api.user.get_current()
+            ?>
             <div class="grid grid_6 right">
                 <div class="nicdark_focus right">
-                    <h6 class="white">
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">·</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <i class="icon-lock-1 "></i>&nbsp;&nbsp;
-                        <a class="white nicdark_mpopup_ajax" 
-                        tal:attributes="href string:${python:'%s/++theme++theme/form-login.html' % abs_url}">LOG IN</a>
-                    </h6>
+
+                    <a class="white nicdark_mpopup_ajax custom_login_text" 
+                    tal:condition="annoymous"
+                    tal:attributes="href string:${python:'%s/++theme++theme/form-login.html' % abs_url}">登入</a>
+                    <i  tal:condition="annoymous"
+                        class="icon-lock-open-1 custom_login_icon"></i>
+
+                    
+                    <a  class="custom_login_text"
+                        tal:condition="not:annoymous"
+                        tal:attributes="href string:${python:'%s/logout' % abs_url}">登出</a>
+                    <i  tal:condition="not:annoymous"
+                        class="icon-lock-1 custom_login_icon"></i>
+                    
+                    <p  class="custom_login_text"
+                        tal:condition="not:annoymous"
+                        tal:content="python:current.getProperty('fullname')"></p>
+                    <i  tal:condition="not:annoymous"
+                        class="icon-user-1 custom_login_icon"></i>
+
+                    <a tal:condition="not:annoymous"
+                       class="custom_login_text"
+                       tal:attributes="href string:${python:'%s/folder_contents' %abs_url}">後台管理</a>
+                    <i  tal:condition="not:annoymous"
+                        class="icon-magic custom_login_icon"></i>                  
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ class IaiaMacro(BrowserView):
     """ """
 
 
+
 class Send_mail(BrowserView):
     template = ViewPageTemplateFile('template/send_mail.pt')
 
@@ -21,5 +22,4 @@ class Send_mail(BrowserView):
             body=message,
         )
         return  
-
         
