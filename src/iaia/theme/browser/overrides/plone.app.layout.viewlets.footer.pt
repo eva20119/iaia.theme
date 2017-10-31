@@ -130,7 +130,7 @@
 					<!--<input class="nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white nicdark_press" type="submit" value="SEND">-->
 					<!-- <a href="submit-message.html" class="nicdark_mpopup_ajax nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white nicdark_press">SEND</a> -->
 					<input class=" nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white nicdark_press"
-					type="submit" name="submit" value="登入" />
+					type="submit" name="submit" value="送出" />
 				</form>
 			</div>
 		</div> 

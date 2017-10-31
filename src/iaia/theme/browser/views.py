@@ -14,11 +14,13 @@ class Send_mail(BrowserView):
     def __call__(self):
         email=self.request.form['email']
         message=self.request.form['message']
+        user_default = 'iaia.content.browser.UserDefault.IUserDefault'
+        recipe_email= api.portal.get_registry_record('%s.email' % user_default)
 
         api.portal.send_email(
-            recipient="henry@mingtak.com.tw",
+            recipient=str(recipe_email),
             sender=email,
-            subject="Trappist",
+            subject="Some Trouble",
             body=message,
         )
         return  
