@@ -92,9 +92,7 @@
 	width: 500px;
 	padding: 5px 15px;
 }
-.custom_news_li:last-child{
-	border-bottom-width: 1px !important;
-}
+
 .custom_news_btn{
 	position: absolute;
 	bottom: 9px;
